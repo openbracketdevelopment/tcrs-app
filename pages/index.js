@@ -15,6 +15,7 @@ export default function Home() {
           name="keywords"
           content="General Service, AC Service, Electrical, Plumbing, Remodeling, Installs, General Repairs"
         />
+        <link rel="canonical" href="https://calltam.com/" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -108,6 +109,32 @@ export default function Home() {
             <li>Slab Leaks</li>
             <li>Replumbing and Repiping</li>
             <li>Water Heater Installs</li>
+            <li>General Remodeling</li>
+          </ul>
+
+          <hr className="my-10"></hr>
+          <h2 className="font-bold text-left mb-10 text-2xl">
+            Servicing in the following areas..
+          </h2>
+          <ul>
+            <li>Fort Worth</li>
+            <li>Benbrook</li>
+            <li>Dallas</li>
+            <li>Irving</li>
+            <li>Lakeworth</li>
+            <li>White Settlement</li>
+            <li>Arlington</li>
+            <li>Garland</li>
+            <li>Grand Praire</li>
+            <li>Burleson</li>
+            <li>Denton</li>
+            <li>Cleburne</li>
+            <li>Weatherford</li>
+            <li>Midlothian</li>
+            <li>Granbury</li>
+            <li>Haltom City</li>
+            <li>Richardson</li>
+            <li>Euless</li>
           </ul>
         </div>
       </main>
