@@ -6,8 +6,36 @@ export default function Home() {
   return (
     <div className="wrapper">
       <Head>
-        <title>Tam's Commercial & Residential Services</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Tam's Commercial & Residential Services | Benbrook, TX</title>
+        <meta
+          name="description"
+          content="Get top-tier residential and commercial services ranging from general service, renovations to maintenance. With over 40 years of experience, you trust our seasoned expertise for exceptional and afforadable results."
+        />
+        <meta
+          name="keywords"
+          content="General Service, AC Service, Electrical, Plumbing, Remodeling, Installs, General Repairs"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
 
       <main>
@@ -46,7 +74,7 @@ export default function Home() {
                   </a>
                   <span className="mx-4">or</span>
                   <a
-                    className="font-bold bg-[#87371c] text-white px-6 py-2 rounded-[2rem] uppercase"
+                    className="font-bold bg-[#396db5] text-white px-6 py-2 rounded-[2rem] uppercase"
                     href="mailto:elite_works@hotmail.com,phamt@live.com"
                   >
                     Email
