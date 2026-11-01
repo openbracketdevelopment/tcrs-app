@@ -1,90 +1,88 @@
-# Repo for Tam's Commercial and Residential Services App
+# Tam's Commercial & Residential Services
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/46648482-644c-4c80-bafb-872057e51b6b/deploy-status)](https://app.netlify.com/sites/next-dev-starter/deploys)
+The public website for Tam's owner-operated residential and commercial service
+business, based in Benbrook, Texas. It introduces the business, provides
+contact information, and presents only services and locations confirmed for
+publication.
 
-This is a [Next.js](https://nextjs.org/) v14 project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and set up to be instantly deployed to [Netlify](https://url.netlify.com/SyTBPVamO)!
+Built with Nuxt 4, Vue 3, and TypeScript. Public information pages are
+prerendered in the Nuxt Node build; the contact API runs on the Nuxt server.
 
-This project is a very minimal starter that includes 2 sample components, a global stylesheet, a `netlify.toml` for deployment, and a `jsconfig.json` for setting up absolute imports and aliases. With Netlify, you'll have access to features like Preview Mode, server-side rendering/incremental static regeneration via Netlify Functions, and internationalized routing on deploy automatically.
+## Requirements
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-netlify-starter&utm_source=github&utm_medium=nextstarter-cs&utm_campaign=devex-cs)
+- Node.js 22.22.3 or later in the 22.x line, 24.15.0 or later in the 24.x
+  line, or 26+
+- npm
 
-(If you click this button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify)
-
-## Table of Contents:
-
-- [Getting Started](#getting-started)
-- [Installation options](#installation-options)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
-  - [Removing Cypress](#removing-cypress)
-
-## Getting Started
-
-First, run the development server:
+## Setup and development
 
 ```bash
+npm install
+cp .env.example .env
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Build and preview
 
-### Installation options
-
-**Option one:** One-click deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-netlify-starter&utm_source=github&utm_medium=nextstarter-cs&utm_campaign=devex-cs)
-
-**Option two:** Manual clone
-
-1. Clone this repo: `git clone https://github.com/netlify-templates/next-netlify-starter.git`
-2. Navigate to the directory and run `npm install`
-3. Run `npm run dev`
-4. Make your changes
-5. Connect to [Netlify](https://url.netlify.com/Bk4UicocL) manually (the `netlify.toml` file is the one you'll need to make sure stays intact to make sure the export is done and pointed to the right stuff)
-
-## Testing
-
-### Included Default Testing
-
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
-
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
-- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
-- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
-
-If your team is not interested in this tooling, you can remove them with ease!
-
-### Removing Renovate
-
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
-
-### Removing Cypress
-
-For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
-
-```diff
-[[plugins]]
-  package = "netlify-plugin-cypress"
--  [plugins.inputs.postBuild]
--    enable = true
--
--  [plugins.inputs]
--    enable = false
-```
-
-If you’d like to remove the `netlify-plugin-cypress` build plugin entirely, you’d need to delete the entire block above instead. And then make sure sure to remove the package from the dependencies using:
+Build the production app and start its local preview:
 
 ```bash
-npm uninstall -D netlify-plugin-cypress
+npm run build
+npm run preview
 ```
 
-And lastly if you’d like to remove Cypress entirely, delete the entire `cypress` folder and the `cypress.config.ts` file. Then remove the dependency using:
+The production server can also be started with:
 
 ```bash
-npm uninstall -S cypress
+node .output/server/index.mjs
 ```
+
+Deploy the Nuxt Node output to a Node-compatible host. The public pages are
+prerendered, while `/api/contact` requires a running server. Static generation
+is available with `npm run generate`, but a static-only host cannot run the
+contact API; do not use that output if a functioning form endpoint is required.
+
+The contact API validates input, limits requests per server process, and
+rejects its honeypot field. Email delivery is not configured, so valid
+submissions receive an explicit unavailable response and are not stored or
+sent. Until a delivery provider and recipient are selected, use the displayed
+phone and email links.
+
+## Updating content
+
+- Edit the public contact details and Nextdoor link in `shared/data/business.ts`.
+- Edit the confirmed service-area list in the same file.
+- Keep draft concepts in `app/data/draft-service-previews.ts` only. Once the
+  owner confirms a service's exact scope and applicable requirements, move
+  its approved content into `shared/data/services.ts` with `status: "published"`.
+- Published service cards and contact-form options use
+  `getPublishedServices()`. Published service pages, prerender routes, and the
+  sitemap are derived from this list.
+- Development-only service previews are in `app/data/draft-service-previews.ts`.
+  Their routes are removed in production by `nuxt.config.ts`; their content is
+  not part of the production route manifest.
+- Review `docs/launch-checklist.md` before launch and
+  `docs/illustration-brief.md` before creating additional artwork.
+
+Set `NUXT_PUBLIC_SITE_URL` to the production domain when building. Copy
+`.env.example` for local configuration and replace its placeholder value;
+never put provider credentials in browser-visible variables.
+
+## Tests
+
+Run the service publication-filter test:
+
+```bash
+npm run test:unit
+```
+
+Start the development server in one terminal, then run:
+
+```bash
+npm run test:e2e
+```
+
+Cypress checks public navigation and assets, draft-service publication, form
+validation, and the contact API's unavailable-delivery response.
