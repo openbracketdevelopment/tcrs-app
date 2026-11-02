@@ -5,6 +5,8 @@ export const business = {
   phoneLink: "tel:+18178238009",
   emails: ["elite_works@hotmail.com", "phamt@live.com"],
   location: "Benbrook, Texas",
+  facebook:
+    "https://www.facebook.com/people/Tams-Commercial-Residential-Services/61554329678792/#",
   nextdoor:
     "https://nextdoor.com/pages/tam-pham-tams-management-co-plumbing-electrical-hvac-fort-worth-tx/?init_source=org_pages&utm_campaign=1702364895672",
 } as const;

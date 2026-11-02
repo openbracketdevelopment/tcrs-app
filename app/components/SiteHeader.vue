@@ -27,15 +27,16 @@ function closeMenu() {
   <header class="site-header" @keydown.esc="closeMenu">
     <div class="header-inner">
       <NuxtLink class="brand" to="/" aria-label="Tam's Services home" @click="closeMenu">
-        <img
-          src="/assets/images/tcrs_logo.webp"
-          alt=""
-          width="42"
-          height="78"
-          aria-hidden="true"
-        />
-        <span class="brand-copy">
-          <strong>Tam's</strong>
+        <span class="brand-badge">
+          <img
+            src="/assets/brand/calltam-mark-light-bg.png"
+            alt="Tam's Services mascot badge"
+            width="512"
+            height="512"
+          />
+        </span>
+        <span class="brand-wordmark">
+          <strong>Tam’s</strong>
           <span>Commercial &amp; Residential Services</span>
         </span>
       </NuxtLink>

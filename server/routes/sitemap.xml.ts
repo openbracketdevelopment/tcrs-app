@@ -8,6 +8,7 @@ export default defineEventHandler((event) => {
     "/about/",
     "/service-area/",
     "/contact/",
+    "/brand/",
     ...getPublishedServices(services).map(
       (service) => `/services/${service.slug}/`,
     ),

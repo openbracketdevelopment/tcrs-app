@@ -7,6 +7,16 @@ publication.
 
 Built with Nuxt 4, Vue 3, and TypeScript. Public information pages are
 prerendered in the Nuxt Node build; the contact API runs on the Nuxt server.
+The site includes a utility-truck-and-mascot hero illustration, a circular
+mascot badge, badge-and-wordmark and full-body logo variations, Facebook and
+Nextdoor social links, self-hosted Barlow Condensed headings and DM Sans body
+text, and original illustrations for project-conversation steps. Unconfirmed
+service concepts, project photos, and reviews appear only in a development-only
+design preview.
+
+Public copy describes general property help, not licensed trade services.
+Do not add licensed trade claims or specific service listings without
+confirming the scope and applicable requirements.
 
 ## Requirements
 
@@ -52,7 +62,8 @@ phone and email links.
 
 ## Updating content
 
-- Edit the public contact details and Nextdoor link in `shared/data/business.ts`.
+- Edit the public contact details and Facebook and Nextdoor links in
+  `shared/data/business.ts`.
 - Edit the confirmed service-area list in the same file.
 - Keep draft concepts in `app/data/draft-service-previews.ts` only. Once the
   owner confirms a service's exact scope and applicable requirements, move
@@ -62,7 +73,12 @@ phone and email links.
   sitemap are derived from this list.
 - Development-only service previews are in `app/data/draft-service-previews.ts`.
   Their routes are removed in production by `nuxt.config.ts`; their content is
-  not part of the production route manifest.
+  not part of the production route manifest. Preview illustrations live in
+  `app/assets/illustrations/drafts/` and are bundled only with the development
+  previews.
+- Public logo variants are in `public/assets/brand/`. The public hero image is
+  in `public/assets/illustrations/`, including the contact banner's thumbs-up
+  mascot pose. The original character reference is in `public/assets/images/`.
 - Review `docs/launch-checklist.md` before launch and
   `docs/illustration-brief.md` before creating additional artwork.
 

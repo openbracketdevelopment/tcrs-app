@@ -20,7 +20,14 @@ function removeDevelopmentPreviewPages(pages: NuxtPage[]) {
 
 export default defineNuxtConfig({
   compatibilityDate: "2026-11-01",
-  css: ["~/assets/css/main.css"],
+  css: [
+    "@fontsource-variable/dm-sans",
+    "@fontsource/barlow-condensed/700.css",
+    "@fontsource/barlow-condensed/800.css",
+    "@fontsource/barlow-condensed/900.css",
+    "~/assets/css/main.css",
+    "~/assets/css/home.css",
+  ],
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
@@ -42,6 +49,7 @@ export default defineNuxtConfig({
         "/about/",
         "/service-area/",
         "/contact/",
+        "/brand/",
         "/sitemap.xml",
         "/robots.txt",
         ...getPublishedServices(services).map(

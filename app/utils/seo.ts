@@ -10,8 +10,11 @@ export function usePageSeo(title: string, description: string, path: string) {
     ogType: "website",
     ogUrl: canonicalUrl,
     ogSiteName: "Tam's Commercial & Residential Services",
-    ogImage: new URL("/assets/images/tcrs_logo.webp", config.public.siteUrl).toString(),
-    twitterCard: "summary",
+    ogImage: new URL(
+      "/assets/illustrations/hero-truck-mascot.webp",
+      config.public.siteUrl,
+    ).toString(),
+    twitterCard: "summary_large_image",
   });
 
   useHead({

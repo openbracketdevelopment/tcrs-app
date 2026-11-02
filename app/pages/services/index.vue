@@ -5,7 +5,7 @@ const publishedServices = getPublishedServices(services);
 
 usePageSeo(
   "Services | Tam's Commercial & Residential Services",
-  "Review currently published services from Tam's Commercial & Residential Services in Benbrook, Texas.",
+  "General property help for homes and businesses in Benbrook, Texas. Discuss your project with us; work requiring a licensed contractor is not offered.",
   "/services/",
 );
 </script>
@@ -14,10 +14,11 @@ usePageSeo(
   <main id="main-content" class="page-main">
     <section class="page-intro">
       <p class="eyebrow">Services</p>
-      <h1>Clear scope. A direct conversation.</h1>
+      <h1>Big or small, start here.</h1>
       <p class="lead">
-        Service details are being confirmed before they are listed here. No
-        trade or project is advertised until its scope has been reviewed.
+        From the everyday to-do list to that issue you’re not sure where to
+        start with, tell us what you need. We’ll discuss the job and let you
+        know whether it fits the general property help we can provide.
       </p>
     </section>
 
@@ -35,11 +36,11 @@ usePageSeo(
     <section v-else class="notice-card">
       <span class="notice-mark" aria-hidden="true">i</span>
       <div>
-        <h2>Service list in review</h2>
+        <h2>Let’s talk about your project</h2>
         <p>
-          The previous site mentioned several building trades. Those claims
-          need an owner review before they can be published here. Call or email
-          to ask about a specific project.
+          No need to have it all figured out. Share the problem, your location,
+          and what a good result looks like. We’ll explain what we can take on
+          and agree on next steps with you.
         </p>
         <NuxtLink class="button button-primary" to="/contact/">Discuss a project</NuxtLink>
       </div>

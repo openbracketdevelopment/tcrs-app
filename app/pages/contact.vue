@@ -74,10 +74,10 @@ async function submitForm() {
   <main id="main-content" class="page-main">
     <section class="page-intro">
       <p class="eyebrow">Contact</p>
-      <h1>Tell Tam what needs attention.</h1>
+      <h1>What’s on your to-do list?</h1>
       <p class="lead">
-        Share a few details and the best way to reach you. You can also call or
-        email directly.
+        Tell us what’s happening, where the property is, and the best way to
+        reach you. Call or email to discuss the scope and your next step.
       </p>
     </section>
 
@@ -189,14 +189,14 @@ async function submitForm() {
           </button>
           <p class="delivery-note">
             Form delivery is not configured yet, so this form will not send
-            your details. Please call or email Tam directly instead.
+            your details. Please call or email us directly instead.
           </p>
         </form>
       </section>
 
       <aside class="contact-direct" aria-labelledby="direct-heading">
         <p class="eyebrow">Prefer to reach out directly?</p>
-        <h2 id="direct-heading">Talk with Tam.</h2>
+        <h2 id="direct-heading">Let’s talk it through.</h2>
         <a class="direct-link" :href="business.phoneLink">{{ business.phone }}</a>
         <a v-for="email in business.emails" :key="email" class="direct-link" :href="`mailto:${email}`">
           {{ email }}

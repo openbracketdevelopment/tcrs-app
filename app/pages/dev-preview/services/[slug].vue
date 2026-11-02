@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { draftServicePreviews } from "~/data/draft-service-previews";
+import maintenancePreview from "~/assets/illustrations/drafts/draft-project-maintenance.webp";
+import planningPreview from "~/assets/illustrations/drafts/draft-project-planning.webp";
 import { getDraftServices } from "#shared/data/services";
 
 const route = useRoute();
@@ -7,6 +9,17 @@ const previews = getDraftServices(draftServicePreviews);
 const service = computed(() =>
   previews.find((item) => item.slug === String(route.params.slug)),
 );
+const previewImage = computed(() => {
+  if (service.value?.slug === "remodeling") {
+    return planningPreview;
+  }
+
+  if (service.value?.slug === "property-maintenance") {
+    return maintenancePreview;
+  }
+
+  return "";
+});
 
 if (!service.value) {
   throw createError({ statusCode: 404, statusMessage: "Preview not found" });
@@ -39,6 +52,10 @@ useSeoMeta({ robots: "noindex, nofollow" });
         <p>{{ service.scopeNote }}</p>
       </div>
     </section>
+    <figure v-if="previewImage" class="draft-illustration">
+      <img :src="previewImage" alt="" width="1024" height="1024" loading="lazy" />
+      <figcaption>Draft artwork for internal layout review only.</figcaption>
+    </figure>
     <section class="preview-section">
       <h2>Tasks and details to confirm</h2>
       <p>These notes are review prompts, not published service claims.</p>

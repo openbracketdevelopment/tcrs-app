@@ -1,7 +1,7 @@
 <script setup lang="ts">
 usePageSeo(
-  "About Tam | Tam's Commercial & Residential Services",
-  "Learn about Tam's owner-operated commercial and residential service business based in Benbrook, Texas.",
+  "About Us | Tam's Commercial & Residential Services",
+  "Owner-operated general property help in Benbrook, Texas. Get to know our straightforward approach and clear service limits.",
   "/about/",
 );
 </script>
@@ -9,27 +9,27 @@ usePageSeo(
 <template>
   <main id="main-content" class="page-main">
     <section class="page-intro">
-      <p class="eyebrow">About Tam</p>
-      <h1>One person to talk to. A clear plan for what comes next.</h1>
+      <p class="eyebrow">About us</p>
+      <h1>Practical help. Personal service.</h1>
       <p class="lead">
-        Tam's Commercial &amp; Residential Services is an owner-operated
-        business based in Benbrook, Texas.
+        We’re an owner-operated business based in Benbrook, Texas, with a
+        simple approach: listen to what you need, be honest about the scope,
+        and keep the next steps clear.
       </p>
     </section>
 
     <section class="about-layout">
       <div class="about-copy">
-        <h2>A straightforward first conversation</h2>
+        <h2>Your property. Your priorities.</h2>
         <p>
-          When you reach out, you can explain what needs attention and where
-          the property is. Tam can talk through the request, confirm whether
-          it fits the work he can take on, and agree on next steps before
-          anything is arranged.
+          Your home or business deserves attention without the runaround.
+          Whether it’s a small concern or a longer list, you can talk directly
+          with the person who will discuss your project.
         </p>
         <p>
-          The business is reviewing the exact work it can offer. This site
-          will list services only after their scope and applicable
-          requirements have been confirmed.
+          We’ll explain what we can help with, what’s included, and what falls
+          outside our scope. You get clear expectations before any work is
+          arranged, not promises we can’t keep.
         </p>
         <NuxtLink class="button button-primary" to="/contact/">Start a conversation</NuxtLink>
       </div>
@@ -41,7 +41,6 @@ usePageSeo(
           height="770"
           loading="lazy"
         />
-        <figcaption>The familiar face of Tam's Services.</figcaption>
       </figure>
     </section>
   </main>

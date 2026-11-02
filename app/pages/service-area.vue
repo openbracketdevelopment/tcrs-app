@@ -5,7 +5,7 @@ const areas = getPublishedServiceAreas();
 
 usePageSeo(
   "Service Area | Tam's Commercial & Residential Services",
-  "Find the confirmed service area for Tam's Commercial & Residential Services.",
+  "Based in Benbrook, Texas. Share your property location with us to confirm service availability before arranging work.",
   "/service-area/",
 );
 </script>
@@ -16,21 +16,23 @@ usePageSeo(
       <p class="eyebrow">Service area</p>
       <h1>Local to Benbrook.</h1>
       <p class="lead">
-        Tam's Commercial &amp; Residential Services is based in Benbrook,
-        Texas. Ask about your property's location before planning a project.
+        We’re based in Benbrook, Texas. Have a project at home or at your
+        business? Share the location so we can confirm whether it’s within
+        our service area.
       </p>
     </section>
 
     <section class="area-panel">
-      <h2>Currently confirmed</h2>
+      <h2>Our home base</h2>
       <ul class="area-list">
         <li v-for="area in areas" :key="area.name">
           <span aria-hidden="true">⌖</span>{{ area.name }}
         </li>
       </ul>
       <p>
-        Other locations listed on the former site are being reviewed and
-        won't be advertised until confirmed.
+        Not sure whether we can come to you? Get in touch with your city or
+        ZIP code before arranging work. We’ll confirm availability for your
+        location.
       </p>
       <NuxtLink class="text-link" to="/contact/">Ask about your location <span aria-hidden="true">→</span></NuxtLink>
     </section>

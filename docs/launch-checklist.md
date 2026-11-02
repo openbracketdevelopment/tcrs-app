@@ -5,6 +5,10 @@ enabling form delivery.
 
 ## Service scope
 
+The public offer is general property help only. The business is not a licensed
+contractor and does not offer work requiring a trade license. Do not advertise licensed HVAC,
+electrical, or plumbing work or imply licensed partners without verification.
+
 - [ ] Confirm the exact tasks currently offered for each service.
 - [ ] Review applicable Texas and local licensing requirements for each task.
 - [ ] Confirm which residential and commercial projects are in scope.
@@ -49,6 +53,12 @@ stored or sent.
 ## Artwork and launch review
 
 - [ ] Confirm the existing mascot artwork is approved for the redesigned site.
+- [ ] Confirm the utility-truck illustration, circular mascot badge, and
+      project-conversation illustrations are approved.
+- [ ] Supply genuine project photographs and approved customer reviews before
+      adding recent-work or testimonial sections to the public site.
+- [ ] Keep draft service illustrations in `app/assets/illustrations/drafts/`;
+      do not publish them before confirming the depicted work.
 - [ ] Review `docs/illustration-brief.md` if commissioning additional artwork.
 - [ ] Check the production deployment supports Nuxt's Node server output and
       the `/api/contact` endpoint.
